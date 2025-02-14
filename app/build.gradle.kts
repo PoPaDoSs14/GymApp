@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id ("kotlin-kapt")
 }
 
 android {
@@ -36,6 +37,12 @@ android {
 }
 
 dependencies {
+
+    implementation ("com.google.dagger:hilt-android:2.55")
+    annotationProcessor ("com.google.dagger:hilt-compiler:2.55")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation ("com.google.dagger:dagger:2.55")
+    kapt ("com.google.dagger:dagger-compiler:2.55")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
