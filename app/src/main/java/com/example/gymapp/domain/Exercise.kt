@@ -1,5 +1,6 @@
 package com.example.gymapp.domain
 
-class Exercise {
-
-}
+data class Exercise (
+    val name: String,
+    val count: Int
+)
