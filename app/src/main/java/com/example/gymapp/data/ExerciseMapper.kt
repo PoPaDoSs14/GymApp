@@ -1,8 +1,10 @@
 package com.example.gymapp.data
 
 import com.example.gymapp.domain.Exercise
+import javax.inject.Inject
 
-class ExerciseMapper {
+
+class ExerciseMapper @Inject constructor() {
 
     fun mapEntityToDbModel(exercise: Exercise): ExerciseDbModel{
         return ExerciseDbModel(
