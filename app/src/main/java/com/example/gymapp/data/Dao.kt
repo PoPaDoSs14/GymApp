@@ -13,8 +13,8 @@ interface Dao {
     fun addExercise(exerciseDbModel: ExerciseDbModel)
 
     @Delete
-    fun deleteExercise(exercise: Exercise)
+    fun deleteExercise(exerciseDbModel: ExerciseDbModel)
 
     @Query("SELECT * FROM exercises")
-    fun getExercises(): List<Exercise>
+    fun getExercises(): List<ExerciseDbModel>
 }

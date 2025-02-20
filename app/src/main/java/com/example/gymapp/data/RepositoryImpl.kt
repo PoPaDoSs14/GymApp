@@ -7,12 +7,20 @@ import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(
     private val application: Application,
-    private val mapper: ExerciseMapper
+    private val mapper: ExerciseMapper,
+    private val dao: Dao
 ) : Repository {
 
     override suspend fun addExercise(exercise: Exercise) {
-        AppDatabase.getInstance(application).Dao()
-            .addExercise(mapper.mapEntityToDbModel(exercise))
+        dao.addExercise(mapper.mapEntityToDbModel(exercise))
+    }
+
+    override suspend fun deleteExercise(exercise: Exercise) {
+        dao.deleteExercise(mapper.mapEntityToDbModel(exercise))
+    }
+
+    override suspend fun getExercises(): List<Exercise> {
+        return mapper.mapListDbModelToListEntity(dao.getExercises())
     }
 
 }
