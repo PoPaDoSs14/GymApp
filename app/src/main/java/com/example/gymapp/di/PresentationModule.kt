@@ -7,5 +7,9 @@ import dagger.Provides
 @Module
 class PresentationModule {
 
+    @Provides
+    fun provideRegistrationViewModel(): Application{
+        return Application()
+    }
 
 }
