@@ -9,7 +9,7 @@ import androidx.room.TypeConverters
 @Database(entities = [ExerciseDbModel::class], version = 1, exportSchema = false)
 abstract class AppDatabase(): RoomDatabase() {
 
-    abstract fun Dao(): Dao
+    abstract fun dao(): Dao
 
     companion object{
         private var INSTANCE: AppDatabase? = null
