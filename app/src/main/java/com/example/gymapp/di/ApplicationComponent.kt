@@ -7,4 +7,14 @@ import dagger.Component
 interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
+
+
+    @Component.Factory
+    interface ApplicationComponentFactory {
+        /**
+         * Создает экземпляр ApplicationComponent.
+         * Параметры можно добавить здесь, если требуется передавать зависимости.
+         */
+        fun create(): ApplicationComponent
+    }
 }
